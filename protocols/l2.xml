@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol checksumSize="0" crypt="L2" name="lineage2 simple" packetbuffer="DefaultPacketBuffer" port="7777" sizebytes="2" strictlength="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="l2.xsd">
+	<packetfamilly switchtype="c" way="ServerPackets">
+		<packet id="0x2e" name="SM_KEY">
+			<part name="protocol ok" type="c">
+				<reader type="Boolean" />
+			</part>
+			<part name="key" size="8" type="b" />
+			<part name="unk" type="d" />
+			<part name="server id" type="d" />
+			<part name="unk" type="c" />
+			<part name="obfuscation key" type="d" />
+			<part name="server list type" type="c" />
+		</packet>
+		<packet id="0x09" name="SM_CHAR_LIST">
+			<part id="0" name="Size" type="d" />
+			<part name="Max" type="d" />
+			<part name="CanPlay" type="c">
+				<reader type="MultiValue">
+					<case val="0" display="Can't play" />
+					<case val="1" display="Can play free until level 85" />
+					<case val="2" display="100% free play" />
+				</reader>
+			</part>
+			<part name="Client" type="d" />
+			<part name="Gift message" type="c" />
+			<part name="BALTHUS_KNIGHTS_ENABLED" type="c" />
+			<![CDATA[ 
+			<switch id="1">
+				<case id="0">
+					<part name="Balathus not enable" type="c" />
+				</case>
+				<case id="1">	
+					<!-- Check Balathus knight premium -->
+					<part name="sad" type="c" />
+				</case>
+			</switch>
+			]]>
+			<part name="Balathus not enable" type="c" />
+		<!-- Make loop for all character-->
+		<for id="0">
+			<part type="S" name="Name"/>
+			<part type="d" name="getObjectId"/>
+			<part type="S" name="_loginName"/>
+			<part type="d" name="_sessionId"/>
+			<part type="d" name="Clan ID"/>
+			<part type="d" name="Builder level"/>
+
+			<part type="d" name="a"/>
+			<part type="d" name="a"/>
+			<part type="d" name="a"/>
+
+			<part type="d" name="a"/><!-- server id-->
+
+			<part type="d" name="a"/>
+			<part type="d" name="a"/>
+			<part type="d" name="a"/>
+			<part type="df" name="getCurrentHp"/>
+			<part type="df" name="getCurrentMp"/>
+			
+			<part type="Q" name="SP"/>
+			<part type="Q" name="EXP"/>
+			<part type="df" name="barExp?"/>
+			<part type="d" name="level"/>	
+
+			<part type="d" name="getReputation"/>	
+			<part type="d" name="getPkKills"/>	
+			<part type="d" name="getPvPKills"/>		
+
+			<part type="d" name="unk"/>	
+			<part type="d" name="unk"/>	
+			<part type="d" name="unk"/>	
+			<part type="d" name="unk"/>	
+			<part type="d" name="unk"/>	
+			<part type="d" name="unk"/>	
+			<part type="d" name="unk"/>	
+
+			<part type="d" name="unkErtheia"/>	
+			<part type="d" name="unkErtheia"/>	
+			
+			<!-- getParerdollOrder -->
+			<part type="d" name="PAPERDOLL_UNDER"/>	
+			<part type="d" name="PAPERDOLL_REAR"/>	
+			<part type="d" name="PAPERDOLL_LEAR"/>	
+			<part type="d" name="PAPERDOLL_NECK"/>	
+			<part type="d" name="PAPERDOLL_NECK"/>	
+			<part type="d" name="PAPERDOLL_LFINGER"/>	
+			<part type="d" name="PAPERDOLL_HEAD"/>	
+			<part type="d" name="PAPERDOLL_RHAND"/>	
+			<part type="d" name="PAPERDOLL_LHAND"/>	
+			<part type="d" name="PAPERDOLL_GLOVES"/>	
+			<part type="d" name="PAPERDOLL_CHEST"/>	
+			<part type="d" name="PAPERDOLL_LEGS"/>	
+			<part type="d" name="PAPERDOLL_FEET"/>	
+			<part type="d" name="PAPERDOLL_CLOAK"/>	
+			<part type="d" name="PAPERDOLL_RHAND"/>	
+			<part type="d" name="PAPERDOLL_HAIR"/>	
+			<part type="d" name="PAPERDOLL_HAIR2"/>
+			<part type="d" name="PAPERDOLL_RBRACELET"/>
+			<part type="d" name="PAPERDOLL_LBRACELET"/>
+			<part type="d" name="PAPERDOLL_AGATHION1"/>
+			<part type="d" name="PAPERDOLL_AGATHION2"/>
+			<part type="d" name="PAPERDOLL_AGATHION3"/>
+			<part type="d" name="PAPERDOLL_AGATHION4"/>
+			<part type="d" name="PAPERDOLL_AGATHION5"/>
+			<part type="d" name="PAPERDOLL_DECO1"/>
+			<part type="d" name="PAPERDOLL_DECO2"/>
+			<part type="d" name="PAPERDOLL_DECO3"/>
+			<part type="d" name="PAPERDOLL_DECO4"/>
+			<part type="d" name="PAPERDOLL_DECO5"/>
+			<part type="d" name="PAPERDOLL_DECO6"/>
+			<part type="d" name="PAPERDOLL_BELT"/>
+			<part type="d" name="PAPERDOLL_BROOCH"/>
+			<part type="d" name="PAPERDOLL_BROOCH_JEWEL1"/>
+			<part type="d" name="PAPERDOLL_BROOCH_JEWEL2"/>
+			<part type="d" name="PAPERDOLL_BROOCH_JEWEL3"/>
+			<part type="d" name="PAPERDOLL_BROOCH_JEWEL4"/>
+			<part type="d" name="PAPERDOLL_BROOCH_JEWEL5"/>
+			<part type="d" name="PAPERDOLL_BROOCH_JEWEL6"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT_BOOK"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT1"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT2"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT3"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT4"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT5"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT6"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT7"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT8"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT9"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT10"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT11"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT12"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT13"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT14"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT15"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT16"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT17"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT18"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT19"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT20"/>
+			<part type="d" name="PAPERDOLL_ARTIFACT21"/>
+			<part type="d" name="PAPERDOLL_RHAND"/>
+			<part type="d" name="PAPERDOLL_LHAND"/>
+			<part type="d" name="PAPERDOLL_GLOVES"/>
+			<part type="d" name="PAPERDOLL_CHEST"/>
+			<part type="d" name="PAPERDOLL_LEGS"/>
+			<part type="d" name="PAPERDOLL_FEET"/>
+			<part type="d" name="PAPERDOLL_RHAND"/>
+			<part type="d" name="PAPERDOLL_HAIR"/>
+			<part type="d" name="PAPERDOLL_HAIR2"/>
+
+			<part type="h" name="EncEff_PAPERDOLL_CHEST"/>
+			<part type="h" name="EncEff_PAPERDOLL_LEGS"/>
+			<part type="h" name="EncEff_PAPERDOLL_HEAD"/>
+			<part type="h" name="EncEff_PAPERDOLL_GLOVES"/>
+			<part type="h" name="EncEff_PAPERDOLL_FEET"/>
+
+			<part type="d" name="getHairStyle"/>
+			<part type="d" name="getHairColor"/>
+			<part type="d" name="getFace"/>
+
+			<part type="df" name="getMaxHp"/>
+			<part type="df" name="getMaxMp"/>
+
+			<part type="d" name="getDeleteTimer"/>
+			<part type="d" name="getClassId"/>
+			<part type="d" name="_activeId"/>
+
+			<part type="c" name="getEnchantEffect_PAPERDOLL_RHAND"/>
+			<part type="d" name="AugOption1_Id"/>
+			<part type="d" name="AugOption2_Id"/>
+
+			<part type="d" name="getTransformId"/><!-- Dont show on select character-->
+
+			<part type="d" name="Pet NpcId"/>
+			<part type="d" name="Pet level"/>
+			<part type="d" name="Pet Food"/>
+			<part type="d" name="Pet Food Level"/>
+			<part type="df" name="Current pet HP"/>
+			<part type="df" name="Current pet MP"/>
+
+			<part type="d" name="getVitalityPoints"/>
+			<part type="d" name="Vitality Percent"/>
+			<part type="d" name="Remaining vitality item uses"/>
+			<part type="d" name="Char is active or not"/>
+			<part type="c" name="isNoble"/><!-- Make true or false-->
+			<part type="c" name="Hero glow"/>
+			<part type="c" name="Show hair accessory if enabled"/>
+
+			<part type="d" name="ban time left"/>
+			<part type="d" name="getLastAccess"/>
+
+			<part type="c" name="338"/>
+			<part type="d" name="getHairColor"/>
+			<!-- DONE PACKET-->
+			</for>
+		</packet>
+		<packet id="0x31" name="SM_CHAR_INFO">
+		<part type="c" name="unkine" />
+		<part type="d" name="unkine" />
+		<part type="d" name="unkine" />
+		<part type="d" name="unkine" />
+		<part type="d" name="unkine" />
+		<part type="d" name="unkine" />
+		</packet>
+		<!-- EX CHAR INFO 0x254 , CHAR_INFO 0x31-->		
+		<packet id="0x32" name="SM_USER_INFO">
+			<part type="d" name="getObjectId" />
+			<part type="d" name="_initSize" />
+			<part type="h" name="unkine" />
+			<part name="_masks" size="4" type="b" />
+			<part type="d" name="unnkow" />
+			<part type="h" name="unkine" />
+			<part type="S" name="Name" />
+		</packet>
+	
+		<packet id="0xfe" name="SM_EXTENDED">
+			<part id="0" name="opcode2" type="h">
+				<reader type="MultiValue">
+					<case val="0x175" display="EX_WORLD_CHAT_CNT" />
+					<case val="0x22E" display="EX_RANKING_CHAR_INFO" />
+					<case val="0x22F" display="EX_RANKING_CHAR_HISTORY" />
+					<case val="0x230" display="EX_RANKING_CHAR_RANKERS" />
+					<case val="0x231" display="EX_RANKING_CHAR_BUFFZONE_NPC_INFO" />
+					<case val="0x232" display="EX_RANKING_CHAR_BUFFZONE_NPC_POSITION" />
+				
+					<case val="0x256" display="EX_SHOW_HOMUNCULUS_BIRTH_INFO" />
+					<case val="0x257" display="EX_HOMUNCULUS_CREATE_START_RESULT" />
+					<case val="0x258" display="EX_HOMUNCULUS_INSERT_RESULT" />
+					<case val="0x259" display="EX_HOMUNCULUS_SUMMON_RESULT" />
+					<case val="0x25A" display="EX_SHOW_HOMUNCULUS_LIST" />
+
+					<case val="0x2B7" display="EX_DETHRONE_INFO" />
+					<case val="0x2B8" display="EX_DETHRONE_RANKING_INFO" />
+					<case val="0x2B9" display="EX_DETHRONE_SERVER_INFO" />
+					<case val="0x2BA" display="EX_DETHRONE_DISTRICT_OCCUPATION_INFO" />
+					<case val="0x2BB" display="EX_DETHRONE_DAILY_MISSION_INFO" />
+					<case val="0x2BC" display="EX_DETHRONE_DAILY_MISSION_GET_REWARD" />
+					<case val="0x2BD" display="EX_DETHRONE_DAILY_MISSION_COMPLETE" />
+					<case val="0x2BE" display="EX_DETHRONE_PREV_SEASON_INFO" />
+					<case val="0x2BF" display="EX_DETHRONE_GET_REWARD" />
+					<case val="0x2C0" display="EX_DETHRONE_CHECK_NAME" />
+					<case val="0x2C1" display="EX_DETHRONE_CHANGE_NAME" />
+					<case val="0x2C2" display="EX_DETHRONE_CONNECT_CASTLE" />
+					<case val="0x2C3" display="EX_DETHRONE_DISCONNECT_CASTLE" />
+					<case val="0x2C4" display="EX_DETHRONE_SEASON_INFO" />
+				</reader>
+			</part>
+			<switch id="0">
+				<case id="0x175" comment="EX_WORLD_CHAT_CNT">
+					<part name="points" type="d" />
+				</case>
+				<case id="0x2C3" comment="EX_DETHRONE_DISCONNECT_CASTLE">
+					<part name="object id" type="d" />
+				</case>
+				<case id="0x2C4" comment="EX_DETHRONE_SEASON_INFO">
+					<part name="Year" type="d" />
+					<part name="Month" type="d" />
+					<part name="unk bytes" type="b" size="1" />
+				</case>
+				<case id="0x2B7" comment="EX_DETHRONE_INFO">
+					<part name="Name" type="S" />
+					<part name="Attack Points" type="d" />
+					<part name="Life" type="d" />
+					<part name="unknow" type="d" />
+					<part name="unknow" type="d" />
+					<part name="int64" type="b" size="8" />
+					<part name="unknow" type="d" />
+					<part name="unknow" type="d" />
+					<part name="int64" type="b" size="8" />
+					<part name="unknow" type="d" />
+				<part name="int64" type="b" size="8" />
+						<part name="unknow" type="d" />
+				<part name="sConquerorName;" type="S" />
+				<part name="unknow" type="d" />
+				<part name="unknow" type="d" />
+				<part name="sTopRankerName" type="S" />
+				<part name="ServerPoints" type="d" />
+				<part name="unknow" type="d" />
+				</case>
+			
+				<case id="0x2B8" comment="EX_DETHRONE_RANKING_INFO">
+				<part name="bCurrentSeason;" type="b" size="2" />
+				<part name="cRankingScope;" type="d" />
+				<part id="1" name="nTotalRankers;" type="d" />
+				<for id="1">
+					<!--Kati paei lathos me to S katalambanei perissotero xoro -->
+					<!-- Metrisa 28byte gia Name kai 8byte gia points ante bgale akri -->
+					<part name="nRank" type="d" />
+					<part name="nWorldID" type="d" />
+					<part name="sName;" type="S"/>
+					<!--<part name="nDethronePoint" type="b" size="2" />-->
+					<part name="nDethronePoint" type="Q" />
+					
+				</for>
+				</case>
+			</switch>
+		</packet>
+		<packet id="0x4A" name="SM_SAY2">
+		<part type="d" name="ChatType" />
+		<part type="d" name="ClientId" />
+		<part type="S" name="Name" />
+		<part type="d" name="msgId" />
+		<part type="S" name="text" />
+		</packet>
+	</packetfamilly>
+	<packetfamilly switchtype="c" way="ClientPackets">
+		<packet id="0x0e" name="CM_PROTOCOL_VERSION">
+			<part name="version" type="d" />
+		</packet>
+		<packet id="0x2b" name="CM_AUTH_LOGIN">
+			<part name="username" type="S" />
+			<part name="playkey1" type="d" />
+			<part name="playkey2" type="d" />
+			<part name="loginkey1" type="d" />
+			<part name="loginkey2" type="d" />
+		</packet>
+		<packet id="0x56" name="CM_ACTION_USE">
+			<part name="action" type="d" />
+			<part name="ctrl" type="c">
+				<reader type="Boolean" />
+			</part>
+			<part name="shift" type="c">
+				<reader type="Boolean" />
+			</part>
+		</packet>
+		<packet id="0x0f" name="CM_CHAR_MOVE">
+			<part name="target x" type="d" />
+			<part name="target y" type="d" />
+			<part name="target z" type="d" />
+			<part name="origin x" type="d" />
+			<part name="origin y" type="d" />
+			<part name="origin z" type="d" />
+			<part name="type (1-mouse, 0-keyboard)" type="d" />
+		</packet>
+		<packet id="0x59" name="CM_CHAR_POSITION">
+			<part name="x" type="d" />
+			<part name="y" type="d" />
+			<part name="z" type="d" />
+			<part name="angle" type="d" />
+			<part name="vehicle id" type="d" />
+		</packet>
+		<packet id="0x11" name="CM_ENTER_WORLD" />
+		<packet id="0x12" name="CM_CHAR_SELECT">
+			<part name="index" type="d" />
+			<part name="unk (0x00 * 14)" type="b" size="14" />
+		</packet>
+
+		<packet id="0x3a" name="CM_CHAR_APPEARING" />
+		<packet id="0x01" name="CM_CHAR_ATTACK">
+			<part name="object id" type="d" />
+			<part name="unk (0x00 * 14)" type="b" size="14" />
+			<part name="x" type="d" />
+			<part name="y" type="d" />
+			<part name="z" type="d" />
+			<part name="shift" type="c">
+				<reader type="Boolean" />
+			</part>
+		</packet>
+		<packet id="0xcb" name="CM_GG_REPLY">
+			<part name="validation key" type="b" size="17" />
+		</packet>
+		<packet id="0xa6" name="CM_REQ_SKILL_COOLDOWN"></packet>
+	</packetfamilly>
+</protocol>
