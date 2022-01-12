@@ -294,6 +294,72 @@
 					
 				</for>
 				</case>
+				<case id="0x2B9" comment="EX_DETHRONE_SERVER_INFO">
+					<part id="2" name="Server Point Status (size)" type="d" /><!-- Size of array? -->
+					<for id="2">
+					<part name="Rank" type="d" />
+					<part name="ServerId" type="d" />
+					<part name="Point" type="Q" />
+					</for>
+					<part id="3" name="Soul Beads Status (size)" type="d"/>
+					<for id="3">
+						<part name="Rank" type="d" />
+						<part name="ServerId" type="d" />
+						<part name="Point" type="Q" />
+					</for>
+				</case>
+				<case id="0x2BA" comment="EX_DETHRONE_DISTRICT_OCCUPATION_INFO">
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="serverId" type="d"/>
+					
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="serverId" type="d"/>
+					<part name="points" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="serverId" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="serverId" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="serverId" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="serverId" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="serverId" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="serverId" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="serverId" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+				</case>
+				<case id="0x2BB" comment="EX_DETHRONE_DAILY_MISSION_INFO" >
+					<part id="4" name="size" type="d"/>
+					<for id="4">
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					</for>
+				</case>
+				<case id="0x2BE" comment="EX_DETHRONE_PREV_SEASON_INFO">
+					<part name="" type="S"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					<part name="" type="d"/>
+					
+				</case>
 			</switch>
 		</packet>
 		<packet id="0x4A" name="SM_SAY2">
