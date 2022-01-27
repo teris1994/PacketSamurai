@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<protocol checksumSize="0" crypt="L2" name="lineage2" packetbuffer="DefaultPacketBuffer" port="7777" sizebytes="2" strictlength="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="l2.xsd">
+<protocol checksumSize="0" crypt="L2" name="l2-test" packetbuffer="DefaultPacketBuffer" port="7777" sizebytes="2" strictlength="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="l2.xsd">
 	<packetfamilly switchtype="c" way="ServerPackets">
 		<packet id="0x2e" name="SM_KEY">
 			<part name="protocol ok" type="c">
